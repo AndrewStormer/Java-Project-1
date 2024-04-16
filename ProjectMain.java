@@ -9,6 +9,17 @@ public class ProjectMain {
 
     ProjectMain() {
         this.library = new Library();
+
+        SSN librarianSSN = new SSN("111-22-3333");
+        Date librarianDOB = new Date(100);
+        Librarian librarian = new Librarian("Mrs. Scott", "319 Southshore Rd", librarianDOB, "gscottumsystem.edu", librarianSSN, library);
+        this.library.addLibrarian(librarian);
+        
+        SSN technicianSSN = new SSN("888-22-3333");
+        Date technicianDOB = new Date(1245);
+        Technician technician = new Technician("Mr. Scott", "319 Southshore Rd", technicianDOB, "jscott@umsystem.edu", technicianSSN, library);
+        this.library.addTechnician(technician);
+
     }
 
     public static void mainMenu(){
@@ -112,9 +123,19 @@ public class ProjectMain {
         public static void main(String [] args){
             Library library = new Library();
 
-            System.out.println("Library must have a librarian and technician to be used!"); //Preconditions for Library object
-            ProjectMain.newEmployeeEvent(library);
-            ProjectMain.newEmployeeEvent(library);
+            SSN librarianSSN = new SSN("111-22-3333");
+            Date librarianDOB = new Date(100);
+            Librarian librarian = new Librarian("Mrs. Scott", "319 Southshore Rd", librarianDOB, "gscottumsystem.edu", librarianSSN, library);
+            library.addLibrarian(librarian);
+            
+            SSN technicianSSN = new SSN("888-22-3333");
+            Date technicianDOB = new Date(1245);
+            Technician technician = new Technician("Mr. Scott", "319 Southshore Rd", technicianDOB, "jscott@umsystem.edu", technicianSSN, library);
+            library.addTechnician(technician);
+
+            //System.out.println("Library must have a librarian and technician to be used!"); //Preconditions for Library object
+            //ProjectMain.newEmployeeEvent(library);
+            //ProjectMain.newEmployeeEvent(library);
 
             ProjectMain.mainMenu();
             Scanner scanner = new Scanner(System.in);
